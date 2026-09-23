@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadira Afrin | Portfolio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+        /* Header & Profile Picture */
+        header {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid #38bdf8;
+            margin-bottom: 15px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            color: #f8fafc;
+        }
+        header p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+        }
+        
+        /* Container & Cards */
+        .container {
+            max-width: 800px;
+            margin: -30px auto 40px;
+            padding: 0 20px;
+        }
+        .card {
+            background: #ffffff;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+        }
+        h2 {
+            color: #0f172a;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #38bdf8;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        /* Skills Grid */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .skill-pill {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
 
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: #0284c7;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #0369a1;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- profil.jpg নামে ছবি আপলোড করলে তা এখানে স্বয়ংক্রিয়ভাবে দেখাবে -->
+        <img src="profile.jpg" alt="Nadira Afrin" class="profile-img">
+        <h1>Nadira Afrin</h1>
+        <p>Educational Technology Specialist & Researcher</p>
+    </header>
+
+    <div class="container">
+        <section class="card">
+            <h2>About Me</h2>
+            <p>Welcome to my official portfolio. I specialize in educational technology, instruction design, and web development. Passionate about leveraging technology to transform learning experiences and build impactful digital solutions.</p>
+        </section>
+
+        <section class="card">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <span class="skill-pill">Educational Technology</span>
+                <span class="skill-pill">Instructional Design</span>
+                <span class="skill-pill">Web Development</span>
+                <span class="skill-pill">Research & Policy</span>
+                <span class="skill-pill">GitHub Pages</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Get In Touch</h2>
+            <p>Feel free to connect with me or check out my repositories and projects directly on GitHub.</p>
+            <a href="https://github.com/nadiraafrin44-cpu" target="_blank" class="btn">View GitHub Profile</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Nadira Afrin. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
