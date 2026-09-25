@@ -1,13 +1,35 @@
 
-<!DOCTYPE html>
+                    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Nadira Afrin | Education Portfolio</title>
+    <title>Nadira Afrin | Educator & Researcher</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        :root {
+            --primary: #102a43;
+            --primary-light: #243b53;
+            --accent: #0284c7;
+            --accent-hover: #0369a1;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -16,196 +38,375 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f7fa;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--bg-body);
         }
 
+        /* HEADER HERO */
         header {
-            background: linear-gradient(135deg, #173b63, #286090);
-            color: white;
-            padding: 70px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: #ffffff;
+            padding: 90px 20px 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #38bdf8, var(--accent), #38bdf8);
         }
 
         .header-container {
             max-width: 1100px;
-            margin: auto;
+            margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 40px;
+            gap: 50px;
         }
 
         .intro {
             flex: 1;
         }
 
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #7dd3fc;
+        }
+
         .intro h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
+            font-size: 52px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1.15;
+            margin-bottom: 12px;
         }
 
         .intro h2 {
-            font-size: 23px;
-            font-weight: normal;
-            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: 400;
+            color: #cbd5e1;
+            margin-bottom: 24px;
         }
 
         .intro p {
-            max-width: 650px;
+            max-width: 620px;
             font-size: 17px;
+            color: #e2e8f0;
+            font-weight: 300;
+        }
+
+        .profile-wrapper {
+            position: relative;
         }
 
         .profile-photo {
-            width: 180px;
-            height: 210px;
+            width: 210px;
+            height: 250px;
             object-fit: cover;
-            border-radius: 15px;
-            border: 5px solid white;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 4px solid rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
         }
 
+        .profile-photo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* NAVIGATION */
         nav {
-            background: white;
-            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 18px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-sm);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
         }
 
         nav a {
             text-decoration: none;
-            color: #173b63;
-            font-weight: bold;
-            margin: 0 15px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 15px;
+            margin: 0 18px;
+            transition: var(--transition);
+            position: relative;
+            padding-bottom: 4px;
         }
 
         nav a:hover {
-            color: #286090;
+            color: var(--accent);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* MAIN SECTIONS */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         section {
-            max-width: 1000px;
-            margin: 45px auto;
-            padding: 35px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            margin: 50px 0;
+            padding: 40px;
+            background: var(--bg-card);
+            border-radius: 18px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        section:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
         }
 
         section h2 {
-            color: #173b63;
-            margin-bottom: 20px;
-            font-size: 28px;
-            border-bottom: 3px solid #286090;
-            padding-bottom: 8px;
+            color: var(--primary);
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        section h2 i {
+            color: var(--accent);
+            font-size: 24px;
         }
 
         .about-text {
             font-size: 17px;
+            color: var(--text-main);
+            line-height: 1.8;
         }
 
-        .education-card,
-        .experience-card {
-            padding: 20px;
-            margin-bottom: 18px;
-            border-left: 5px solid #286090;
-            background: #f7f9fc;
-            border-radius: 5px;
+        /* EDUCATION & EXPERIENCE CARDS */
+        .card-grid {
+            display: grid;
+            gap: 20px;
         }
 
-        .education-card h3,
-        .experience-card h3 {
-            color: #173b63;
-            margin-bottom: 5px;
+        .card {
+            padding: 24px;
+            background: #f8fafc;
+            border-left: 4px solid var(--accent);
+            border-radius: 10px;
+            transition: var(--transition);
         }
 
-        .education-card p,
-        .experience-card p {
-            margin: 5px 0;
+        .card:hover {
+            background: #ffffff;
+            transform: translateX(6px);
+            box-shadow: var(--shadow-sm);
         }
 
-        .skills {
+        .card h3 {
+            color: var(--primary);
+            font-size: 19px;
+            margin-bottom: 6px;
+        }
+
+        .card .institution {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .card .meta {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .card li {
+            margin-bottom: 6px;
+            color: var(--text-main);
+        }
+
+        /* SKILLS BADGES */
+        .skills-container {
             display: flex;
             flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #f0f9ff;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* INTERESTS LIST */
+        .interest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .interest-item {
+            display: flex;
+            align-items: center;
             gap: 12px;
+            padding: 14px;
+            background: #f8fafc;
+            border-radius: 10px;
+            font-weight: 500;
         }
 
-        .skill {
-            background: #e8f0f8;
-            color: #173b63;
-            padding: 10px 16px;
-            border-radius: 20px;
-            font-weight: bold;
+        .interest-item i {
+            color: var(--accent);
         }
 
-        .interest-list {
-            padding-left: 25px;
-        }
-
-        .interest-list li {
-            margin-bottom: 8px;
-        }
-
+        /* CONTACT SECTION */
         .contact-box {
             text-align: center;
+            padding: 20px 0;
         }
 
-        .contact-box p {
-            margin: 10px 0;
-            font-size: 17px;
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
         }
 
-        .contact-box a {
-            color: #286090;
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        .contact-item a {
+            color: var(--accent);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
         }
 
         .resume-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: #173b63;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            background: var(--accent);
             color: white;
             text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+            transition: var(--transition);
         }
 
         .resume-button:hover {
-            background: #286090;
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45);
         }
 
+        /* FOOTER */
         footer {
             text-align: center;
-            background: #173b63;
-            color: white;
-            padding: 25px;
-            margin-top: 50px;
+            background: var(--primary);
+            color: #94a3b8;
+            padding: 35px 20px;
+            margin-top: 80px;
+            font-size: 14px;
         }
 
-        @media (max-width: 700px) {
+        footer p:first-child {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
             .header-container {
                 flex-direction: column-reverse;
                 text-align: center;
             }
 
             .intro h1 {
-                font-size: 36px;
+                font-size: 38px;
+            }
+
+            .intro p {
+                margin: 0 auto;
+            }
+
+            section {
+                padding: 25px;
+                margin: 30px 0;
             }
 
             nav a {
                 display: inline-block;
-                margin: 5px 8px;
+                margin: 5px 10px;
             }
 
-            section {
-                margin: 25px 12px;
-                padding: 25px;
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
             }
         }
     </style>
@@ -216,24 +417,21 @@
     <!-- HEADER -->
     <header>
         <div class="header-container">
-
             <div class="intro">
+                <span class="badge"><i class="fa-solid fa-graduation-cap"></i> Education Portfolio</span>
                 <h1>Nadira Afrin</h1>
-
-                <h2>B.Ed Graduate | Aspiring Educator</h2>
-
+                <h2>B.Ed Graduate & Aspiring Educator</h2>
                 <p>
                     Passionate about teaching, educational technology, curriculum
                     development, research, and innovative learning practices.
                 </p>
             </div>
-
-            <!-- Put your photo in the same GitHub folder and name it photo.jpg -->
-            <img src="photo.jpg" alt="Nadira Afrin" class="profile-photo">
-
+            
+            <div class="profile-wrapper">
+                <img src="file.jpg" alt="Nadira Afrin" class="profile-photo">
+            </div>
         </div>
     </header>
-
 
     <!-- NAVIGATION -->
     <nav>
@@ -245,161 +443,123 @@
         <a href="#contact">Contact</a>
     </nav>
 
+    <div class="container">
 
-    <!-- ABOUT -->
-    <section id="about">
-
-        <h2>About Me</h2>
-
-        <p class="about-text">
-            I am a B.Ed graduate from the Institute of Education and Research (IER),
-            University of Dhaka. I have practical teaching experience through my
-            teaching internship at West End High School, Lalbag, Dhaka.
-            I am interested in learner-centred teaching, educational technology,
-            curriculum development, instructional practices, and educational research.
-        </p>
-
-    </section>
-
-
-    <!-- EDUCATION -->
-    <section id="education">
-
-        <h2>Education</h2>
-
-        <div class="education-card">
-            <h3>Bachelor of Education (B.Ed)</h3>
-            <p><strong>Institute of Education and Research (IER), University of Dhaka</strong></p>
-            <p>2025 | CGPA: 3.51</p>
-        </div>
-
-        <div class="education-card">
-            <h3>Higher Secondary Certificate (HSC)</h3>
-            <p>2020 | GPA: 4.75</p>
-        </div>
-
-        <div class="education-card">
-            <h3>Secondary School Certificate (SSC)</h3>
-            <p>2018 | GPA: 4.78</p>
-        </div>
-
-    </section>
-
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-
-        <h2>Teaching Experience</h2>
-
-        <div class="experience-card">
-
-            <h3>Teacher Intern</h3>
-
-            <p>
-                <strong>West End High School, Lalbag, Dhaka</strong>
+        <!-- ABOUT -->
+        <section id="about">
+            <h2><i class="fa-solid fa-user"></i> About Me</h2>
+            <p class="about-text">
+                I am a B.Ed graduate from the Institute of Education and Research (IER),
+                University of Dhaka. I have practical teaching experience through my
+                teaching internship at West End High School, Lalbag, Dhaka.
+                I am interested in learner-centred teaching, educational technology,
+                curriculum development, instructional practices, and educational research.
             </p>
+        </section>
 
-            <p>
-                During my teaching internship, I gained practical experience
-                in classroom teaching, lesson preparation, student engagement,
-                and instructional activities.
-            </p>
+        <!-- EDUCATION -->
+        <section id="education">
+            <h2><i class="fa-solid fa-book-open"></i> Education</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Bachelor of Education (B.Ed)</h3>
+                    <p class="institution">Institute of Education and Research (IER), University of Dhaka</p>
+                    <p class="meta"><i class="fa-regular fa-calendar"></i> Graduated: 2025 | CGPA: 3.51</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Higher Secondary Certificate (HSC)</h3>
+                    <p class="meta"><i class="fa-regular fa-calendar"></i> Passed: 2020 | GPA: 4.75</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Secondary School Certificate (SSC)</h3>
+                    <p class="meta"><i class="fa-regular fa-calendar"></i> Passed: 2018 | GPA: 4.78</p>
+                </div>
+            </div>
+        </section>
 
-            <ul>
-                <li>Prepared and supported classroom lessons.</li>
-                <li>Engaged students in classroom learning activities.</li>
-                <li>Developed practical teaching and communication skills.</li>
-                <li>Gained first-hand experience in a school environment.</li>
-            </ul>
+        <!-- EXPERIENCE -->
+        <section id="experience">
+            <h2><i class="fa-solid fa-briefcase"></i> Teaching Experience</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Teacher Intern</h3>
+                    <p class="institution">West End High School, Lalbag, Dhaka</p>
+                    <p class="meta">Gained practical classroom experience and developed student-centered instructional strategies.</p>
+                    <ul>
+                        <li>Prepared and supported interactive classroom lessons.</li>
+                        <li>Engaged students through active learning techniques.</li>
+                        <li>Developed practical classroom management and communication skills.</li>
+                        <li>Gained hands-on experience in dynamic school environments.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-        </div>
+        <!-- SKILLS -->
+        <section id="skills">
+            <h2><i class="fa-solid fa-gears"></i> Skills & Competencies</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Teaching</span>
+                <span class="skill-tag">Classroom Management</span>
+                <span class="skill-tag">Lesson Preparation</span>
+                <span class="skill-tag">Student Engagement</span>
+                <span class="skill-tag">Communication</span>
+                <span class="skill-tag">Presentation</span>
+                <span class="skill-tag">Educational Technology</span>
+                <span class="skill-tag">Academic Research</span>
+                <span class="skill-tag">Curriculum Development</span>
+                <span class="skill-tag">Microsoft Word</span>
+                <span class="skill-tag">Microsoft PowerPoint</span>
+                <span class="skill-tag">Microsoft Excel</span>
+                <span class="skill-tag">Canva</span>
+                <span class="skill-tag">Teamwork</span>
+                <span class="skill-tag">Creative Thinking</span>
+            </div>
+        </section>
 
-    </section>
+        <!-- INTERESTS -->
+        <section id="interests">
+            <h2><i class="fa-solid fa-lightbulb"></i> Academic & Professional Interests</h2>
+            <div class="interest-grid">
+                <div class="interest-item"><i class="fa-solid fa-check-circle"></i> Teaching & Learning</div>
+                <div class="interest-item"><i class="fa-solid fa-check-circle"></i> Curriculum Development</div>
+                <div class="interest-item"><i class="fa-solid fa-check-circle"></i> Educational Technology</div>
+                <div class="interest-item"><i class="fa-solid fa-check-circle"></i> Instructional Practices</div>
+                <div class="interest-item"><i class="fa-solid fa-check-circle"></i> Educational Research</div>
+                <div class="interest-item"><i class="fa-solid fa-check-circle"></i> Innovative Teaching Methods</div>
+            </div>
+        </section>
 
+        <!-- CONTACT -->
+        <section id="contact">
+            <h2><i class="fa-solid fa-envelope"></i> Contact Me</h2>
+            <div class="contact-box">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                        <a href="mailto:nadiraafrin44@gmail.com">nadiraafrin44@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>University of Dhaka, Bangladesh</span>
+                    </div>
+                </div>
 
-    <!-- SKILLS -->
-    <section id="skills">
-
-        <h2>Skills & Competencies</h2>
-
-        <div class="skills">
-
-            <span class="skill">Teaching</span>
-            <span class="skill">Classroom Management</span>
-            <span class="skill">Lesson Preparation</span>
-            <span class="skill">Student Engagement</span>
-            <span class="skill">Communication</span>
-            <span class="skill">Presentation</span>
-            <span class="skill">Educational Technology</span>
-            <span class="skill">Academic Research</span>
-            <span class="skill">Curriculum Development</span>
-            <span class="skill">Microsoft Word</span>
-            <span class="skill">Microsoft PowerPoint</span>
-            <span class="skill">Microsoft Excel</span>
-            <span class="skill">Canva</span>
-            <span class="skill">Teamwork</span>
-            <span class="skill">Creative Thinking</span>
-
-        </div>
-
-    </section>
-
-
-    <!-- INTERESTS -->
-    <section id="interests">
-
-        <h2>Academic & Professional Interests</h2>
-
-        <ul class="interest-list">
-            <li>Teaching and Learning</li>
-            <li>Curriculum Development</li>
-            <li>Educational Technology</li>
-            <li>Instructional Practices</li>
-            <li>Educational Research</li>
-            <li>Innovative Teaching Methods</li>
-        </ul>
-
-    </section>
-
-
-    <!-- CONTACT -->
-    <section id="contact">
-
-        <h2>Contact Me</h2>
-
-        <div class="contact-box">
-
-            <p>
-                <strong>Email:</strong>
-                <a href="mailto:nadiraafrin44@gmail.com">
-                    nadiraafrin44@gmail.com
+                <a class="resume-button" href="Nadira_Afrin_Stronger_CV.pdf" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-file-pdf"></i> View My Full CV
                 </a>
-            </p>
+            </div>
+        </section>
 
-            <p>
-                <strong>Location:</strong>
-                University of Dhaka, Bangladesh
-            </p>
-
-            <a class="resume-button" href="Nadira_Afrin_Stronger_CV.pdf" target="_blank">
-                View My CV
-            </a>
-
-        </div>
-
-    </section>
-
+    </div>
 
     <!-- FOOTER -->
     <footer>
-
         <p>© 2026 Nadira Afrin. All Rights Reserved.</p>
         <p>Education | Teaching | Innovation</p>
-
     </footer>
 
 </body>
 </html>
-            
-       
-       
