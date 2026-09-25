@@ -1,149 +1,405 @@
+
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nadira Afrin | Portfolio</title>
+
+    <title>Nadira Afrin | Education Portfolio</title>
+
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background-color: #f8fafc;
-            color: #334155;
-            line-height: 1.6;
-        }
-        /* Header & Profile Picture */
-        header {
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-            color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        .profile-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 4px solid #38bdf8;
-            margin-bottom: 15px;
-            object-fit: cover;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 8px;
-            color: #f8fafc;
-        }
-        header p {
-            font-size: 1.1rem;
-            color: #94a3b8;
-        }
-        
-        /* Container & Cards */
-        .container {
-            max-width: 800px;
-            margin: -30px auto 40px;
-            padding: 0 20px;
-        }
-        .card {
-            background: #ffffff;
-            padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 12px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease;
-        }
-        .card:hover {
-            transform: translateY(-3px);
-        }
-        h2 {
-            color: #0f172a;
-            font-size: 1.4rem;
-            border-bottom: 2px solid #38bdf8;
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-        
-        /* Skills Grid */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .skill-pill {
-            background: #e0f2fe;
-            color: #0369a1;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.95rem;
-            font-weight: 500;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            background: #0284c7;
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #173b63, #286090);
             color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
+            padding: 70px 20px;
+        }
+
+        .header-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .intro {
+            flex: 1;
+        }
+
+        .intro h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .intro h2 {
+            font-size: 23px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            max-width: 650px;
+            font-size: 17px;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 5px solid white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        }
+
+        nav {
+            background: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
             text-decoration: none;
-            font-weight: 500;
-            margin-top: 10px;
-            transition: background 0.2s;
+            color: #173b63;
+            font-weight: bold;
+            margin: 0 15px;
         }
-        .btn:hover {
-            background: #0369a1;
+
+        nav a:hover {
+            color: #286090;
         }
-        
+
+        section {
+            max-width: 1000px;
+            margin: 45px auto;
+            padding: 35px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        section h2 {
+            color: #173b63;
+            margin-bottom: 20px;
+            font-size: 28px;
+            border-bottom: 3px solid #286090;
+            padding-bottom: 8px;
+        }
+
+        .about-text {
+            font-size: 17px;
+        }
+
+        .education-card,
+        .experience-card {
+            padding: 20px;
+            margin-bottom: 18px;
+            border-left: 5px solid #286090;
+            background: #f7f9fc;
+            border-radius: 5px;
+        }
+
+        .education-card h3,
+        .experience-card h3 {
+            color: #173b63;
+            margin-bottom: 5px;
+        }
+
+        .education-card p,
+        .experience-card p {
+            margin: 5px 0;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            background: #e8f0f8;
+            color: #173b63;
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .interest-list {
+            padding-left: 25px;
+        }
+
+        .interest-list li {
+            margin-bottom: 8px;
+        }
+
+        .contact-box {
+            text-align: center;
+        }
+
+        .contact-box p {
+            margin: 10px 0;
+            font-size: 17px;
+        }
+
+        .contact-box a {
+            color: #286090;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .resume-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #173b63;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .resume-button:hover {
+            background: #286090;
+        }
+
         footer {
             text-align: center;
+            background: #173b63;
+            color: white;
             padding: 25px;
-            color: #64748b;
-            font-size: 0.9rem;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 700px) {
+            .header-container {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .intro h1 {
+                font-size: 36px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+
+            section {
+                margin: 25px 12px;
+                padding: 25px;
+            }
         }
     </style>
 </head>
+
 <body>
 
+    <!-- HEADER -->
     <header>
-        <!-- profil.jpg নামে ছবি আপলোড করলে তা এখানে স্বয়ংক্রিয়ভাবে দেখাবে -->
-        <img src="profile.jpg" alt="Nadira Afrin" class="profile-img">
-        <h1>Nadira Afrin</h1>
-        <p>Educational Technology Specialist & Researcher</p>
+        <div class="header-container">
+
+            <div class="intro">
+                <h1>Nadira Afrin</h1>
+
+                <h2>B.Ed Graduate | Aspiring Educator</h2>
+
+                <p>
+                    Passionate about teaching, educational technology, curriculum
+                    development, research, and innovative learning practices.
+                </p>
+            </div>
+
+            <!-- Put your photo in the same GitHub folder and name it photo.jpg -->
+            <img src="photo.jpg" alt="Nadira Afrin" class="profile-photo">
+
+        </div>
     </header>
 
-    <div class="container">
-        <section class="card">
-            <h2>About Me</h2>
-            <p>Welcome to my official portfolio. I specialize in educational technology, instruction design, and web development. Passionate about leveraging technology to transform learning experiences and build impactful digital solutions.</p>
-        </section>
 
-        <section class="card">
-            <h2>Skills & Expertise</h2>
-            <div class="skills-grid">
-                <span class="skill-pill">Educational Technology</span>
-                <span class="skill-pill">Instructional Design</span>
-                <span class="skill-pill">Web Development</span>
-                <span class="skill-pill">Research & Policy</span>
-                <span class="skill-pill">GitHub Pages</span>
-            </div>
-        </section>
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#interests">Interests</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-        <section class="card">
-            <h2>Get In Touch</h2>
-            <p>Feel free to connect with me or check out my repositories and projects directly on GitHub.</p>
-            <a href="https://github.com/nadiraafrin44-cpu" target="_blank" class="btn">View GitHub Profile</a>
-        </section>
-    </div>
 
+    <!-- ABOUT -->
+    <section id="about">
+
+        <h2>About Me</h2>
+
+        <p class="about-text">
+            I am a B.Ed graduate from the Institute of Education and Research (IER),
+            University of Dhaka. I have practical teaching experience through my
+            teaching internship at West End High School, Lalbag, Dhaka.
+            I am interested in learner-centred teaching, educational technology,
+            curriculum development, instructional practices, and educational research.
+        </p>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section id="education">
+
+        <h2>Education</h2>
+
+        <div class="education-card">
+            <h3>Bachelor of Education (B.Ed)</h3>
+            <p><strong>Institute of Education and Research (IER), University of Dhaka</strong></p>
+            <p>2025 | CGPA: 3.51</p>
+        </div>
+
+        <div class="education-card">
+            <h3>Higher Secondary Certificate (HSC)</h3>
+            <p>2020 | GPA: 4.75</p>
+        </div>
+
+        <div class="education-card">
+            <h3>Secondary School Certificate (SSC)</h3>
+            <p>2018 | GPA: 4.78</p>
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+
+        <h2>Teaching Experience</h2>
+
+        <div class="experience-card">
+
+            <h3>Teacher Intern</h3>
+
+            <p>
+                <strong>West End High School, Lalbag, Dhaka</strong>
+            </p>
+
+            <p>
+                During my teaching internship, I gained practical experience
+                in classroom teaching, lesson preparation, student engagement,
+                and instructional activities.
+            </p>
+
+            <ul>
+                <li>Prepared and supported classroom lessons.</li>
+                <li>Engaged students in classroom learning activities.</li>
+                <li>Developed practical teaching and communication skills.</li>
+                <li>Gained first-hand experience in a school environment.</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <h2>Skills & Competencies</h2>
+
+        <div class="skills">
+
+            <span class="skill">Teaching</span>
+            <span class="skill">Classroom Management</span>
+            <span class="skill">Lesson Preparation</span>
+            <span class="skill">Student Engagement</span>
+            <span class="skill">Communication</span>
+            <span class="skill">Presentation</span>
+            <span class="skill">Educational Technology</span>
+            <span class="skill">Academic Research</span>
+            <span class="skill">Curriculum Development</span>
+            <span class="skill">Microsoft Word</span>
+            <span class="skill">Microsoft PowerPoint</span>
+            <span class="skill">Microsoft Excel</span>
+            <span class="skill">Canva</span>
+            <span class="skill">Teamwork</span>
+            <span class="skill">Creative Thinking</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTERESTS -->
+    <section id="interests">
+
+        <h2>Academic & Professional Interests</h2>
+
+        <ul class="interest-list">
+            <li>Teaching and Learning</li>
+            <li>Curriculum Development</li>
+            <li>Educational Technology</li>
+            <li>Instructional Practices</li>
+            <li>Educational Research</li>
+            <li>Innovative Teaching Methods</li>
+        </ul>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <h2>Contact Me</h2>
+
+        <div class="contact-box">
+
+            <p>
+                <strong>Email:</strong>
+                <a href="mailto:nadiraafrin44@gmail.com">
+                    nadiraafrin44@gmail.com
+                </a>
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                University of Dhaka, Bangladesh
+            </p>
+
+            <a class="resume-button" href="Nadira_Afrin_Stronger_CV.pdf" target="_blank">
+                View My CV
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Nadira Afrin. All rights reserved.</p>
+
+        <p>© 2026 Nadira Afrin. All Rights Reserved.</p>
+        <p>Education | Teaching | Innovation</p>
+
     </footer>
 
 </body>
 </html>
+            
+       
+       
